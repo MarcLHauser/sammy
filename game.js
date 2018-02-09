@@ -2,7 +2,12 @@ var event = {
     
     "go to America?": {
         question: "You are Jurgis, a 27-year-old Lithuanian man who has fallen in love with Ona, a 16-year-old girl. Do you want to go to America with her and her family? Answer 'yes()' or 'no()'",
-        yes: "stay in hotel?"
+        no: "stay in hotel?",
+        yes: "freeze"
+    },
+    
+    "freeze" : {
+        causeDeath: "You have frozen to death because of Lithuania's cold climate."
     },
     
     "stay in hotel?": {
@@ -39,16 +44,14 @@ var player = {
 
 var ask = function(){
     
-    if(player.alive){
+    if( player.life.causeDeath === undefined ){
         
-        // define initial question using the player's life event's question
         console.log(player.life.question);
-        
         return "";
     
     } else {
     
-        console.log(player.causeDeath);
+        console.log( player.life.causeDeath );
         return "Game Over.";
     }
 
