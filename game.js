@@ -27,22 +27,18 @@ var event = {
     
 };
 
+var state = 'go to America?';
+
 var player = {
     alive: true,
-    causeDeath: "yay",
-    
-    // define the player's initial life value to an event object
-    
-    life: event['go to America?'],
-
+    causeDeath: "yay"
 };
 
 var ask = function(){
     
     if(player.alive){
         
-        // define initial question using the player's life event's question
-        console.log(player.life.question);
+        console.log( event[state].question );
         
         return "";
     
@@ -57,6 +53,10 @@ var ask = function(){
 var n = 0;  
 
 var yes = function(){
+    state = event[state].yes;
+    return ask();
+
+
     
     //go to stockyards?
     if (n == 4){
@@ -71,11 +71,6 @@ var yes = function(){
     }
     
     // re-assign the player's life value to the event object defined as the 'yes' value of the current event object 
-    
-    player.life = event[player.life.yes];
-    
-    
-    return ask();
 };
 
 var no = function(){
