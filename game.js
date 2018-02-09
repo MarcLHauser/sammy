@@ -1,7 +1,8 @@
 var event = {
     
     "go to America?": {
-        question: "You are Jurgis, a 27-year-old Lithuanian man who has fallen in love with Ona, a 16-year-old girl. Do you want to go to America with her and her family? Answer 'yes()' or 'no()'"
+        question: "You are Jurgis, a 27-year-old Lithuanian man who has fallen in love with Ona, a 16-year-old girl. Do you want to go to America with her and her family? Answer 'yes()' or 'no()'",
+        yes: "stay in hotel?"
     },
     
     "stay in hotel?": {
@@ -29,15 +30,19 @@ var event = {
 var player = {
     alive: true,
     causeDeath: "yay",
-    // define initial question using an event object's question
-    questionNumber: event['go to America?'].question
+    
+    // define the player's initial life event
+    life: event['go to America?'],
+
 };
 
 var ask = function(){
     
     if(player.alive){
-       
-        console.log(player.questionNumber);
+        
+        // define initial question using the player's life event's question
+        console.log(player.life.question);
+        
         return "";
     
     } else {
