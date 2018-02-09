@@ -31,7 +31,8 @@ var player = {
     alive: true,
     causeDeath: "yay",
     
-    // define the player's initial life event
+    // define the player's initial life value to an event object
+    
     life: event['go to America?'],
 
 };
@@ -69,8 +70,11 @@ var yes = function(){
         player.causeDeath = "You get tuberculosis after a few days in the tenement. It is fatal.";
     }
     
-    n = n + 1;
-    player.questionNumber = questions[n];
+    // re-assign the player's life value to the event object defined as the 'yes' value of the current event object 
+    
+    player.life = event[player.life.yes];
+    
+    
     return ask();
 };
 
