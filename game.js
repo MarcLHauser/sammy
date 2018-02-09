@@ -63,6 +63,8 @@ chicago.no      = wandering;
 stockyards.yes  = boardinghouse;
 stockyards.no   = streets;
 
+var place = lithuania;
+
 var ask = function(){
     if( place.question ){  
         return place.question;
@@ -82,5 +84,4 @@ var no = function(){
     return ask();
 };
 
-var place = lithuania;
 console.log( ask() );
