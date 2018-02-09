@@ -52,13 +52,17 @@ var data = {
     
     stockyards: {
         question: "You arrive in the stockyards. Coincidencetally, you run into your friend who owns a bodega. He gives a recommendation for a boardinghouse. Do you stay there?",
-        no: "chicagoTenement"
+        no: "streets",
+        yes: "boardinghouse"
     },
     
-    chicagoTenement: {
+    streets: {
         causeDeath:  "You quickly realize that the whole family cannot sleep in the streets. You find a tenement building to stay in for very little money, but it is very small and cramped. You get sick, because of the cramped consitions, and the disease is fatal."
-    }
+    },
     
+    boardinghouse: {
+        question: 'More questions to come...'
+    }
 };
 
 var place = 'lithuania';
