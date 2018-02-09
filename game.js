@@ -1,16 +1,36 @@
-var questions = [
-"You are Jurgis, a 27-year-old Lithuanian man who has fallen in love with Ona, a 16-year-old girl. Do you want to go to America with her and her family? Answer 'yes()' or 'no()'",
-"You arrive in New York. A man in a blue uniform says he knows a place you can stay at. Do you follow him to a hotel?",
-"The man makes you pay enormous fees to get out. Once you get out of the hotel, you remember that your friend got rich in Chicago. Do you want to go to Chicago?",
-"You stay in New York. Do you want to stay in a tenement?",
-"You finally arrive in Chicago and you learn a new word: 'stockyards'. Do you want to go to the stockyards?",
-"You arrive in the stockyards. Coincidencetally, you run into your friend who owns a bodega. He gives a recommendation for a boardinghouse. Do you stay there?"
-];
+var event = {
+    
+    "go to America?": {
+        question: "You are Jurgis, a 27-year-old Lithuanian man who has fallen in love with Ona, a 16-year-old girl. Do you want to go to America with her and her family? Answer 'yes()' or 'no()'"
+    },
+    
+    "stay in hotel?": {
+        question: "You arrive in New York. A man in a blue uniform says he knows a place you can stay at. Do you follow him to a hotel?"
+    },
+    
+    "go to Chicago?": {
+        question: "The man makes you pay enormous fees to get out. Once you get out of the hotel, you remember that your friend got rich in Chicago. Do you want to go to Chicago?"
+    },
+    
+    "stay in New York tenement?": {
+        question: "You stay in New York. Do you want to stay in a tenement?"
+    },
+    
+    "go to stockyards?": {
+        question: "You finally arrive in Chicago and you learn a new word: 'stockyards'. Do you want to go to the stockyards?"
+    },
+    
+    "boardinghouse in stockyards?": {
+        question: "You arrive in the stockyards. Coincidencetally, you run into your friend who owns a bodega. He gives a recommendation for a boardinghouse. Do you stay there?"
+    }
+    
+};
 
 var player = {
     alive: true,
     causeDeath: "yay",
-    questionNumber: questions[0]
+    // define initial question using an event object's question
+    questionNumber: event['go to America?'].question
 };
 
 var ask = function(){
