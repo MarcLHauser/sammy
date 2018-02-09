@@ -26,18 +26,18 @@ var event = {
     
 };
 
+var state = 'go to America?';
+
 var player = {
     alive: true,
-    causeDeath: "yay",
-    // define initial question using an event object's question
-    questionNumber: event['go to America?'].question
+    causeDeath: "yay"
 };
 
 var ask = function(){
     
     if(player.alive){
        
-        console.log(player.questionNumber);
+        console.log( event[state].question );
         return "";
     
     } else {
