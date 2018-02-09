@@ -27,21 +27,18 @@ var event = {
     
 };
 
+var state = 'go to America?';
+
 var player = {
     alive: true,
-    causeDeath: "yay",
-    
-    // define the player's initial life event
-    life: event['go to America?'],
-
+    causeDeath: "yay"
 };
 
 var ask = function(){
     
     if(player.alive){
         
-        // define initial question using the player's life event's question
-        console.log(player.life.question);
+        console.log( event[state].question );
         
         return "";
     
