@@ -3,7 +3,7 @@ lithuania = {
 };
     
 freeze = {
-    causeDeath: "You have frozen to death because of Lithuania's cold climate."
+    death: "You have frozen to death because of Lithuania's cold climate."
 };
 
 america = {
@@ -11,7 +11,7 @@ america = {
 };
 
 alleyway = {
-    causeDeath: "You decide to sleep in an abandoned alleyway and find all your money gone in the morning. You starve to death because no one will give you a job."
+    death: "You decide to sleep in an abandoned alleyway and find all your money gone in the morning. You starve to death because no one will give you a job."
 };
 
 hotel = {
@@ -23,11 +23,11 @@ stay = {
 };
 
 tenement = {
-    causeDeath: "You get tuberculosis after a few days in the tenement. It is fatal."
+    death: "You get tuberculosis after a few days in the tenement. It is fatal."
 };
 
 homeless = {
-    causeDeath: "You are homeless and you can't find work. You starve."
+    death: "You are homeless and you can't find work. You starve."
 };
 
 chicago = {
@@ -35,7 +35,7 @@ chicago = {
 };
 
 wandering = {
-    causeDeath : "You starve wandering Chicago."
+    death: "You starve wandering Chicago."
 };
 
 stockyards = {
@@ -43,7 +43,7 @@ stockyards = {
 };
 
 streets = {
-    causeDeath:  "You quickly realize that the whole family cannot sleep in the streets. You find a tenement building to stay in for very little money, but it is very small and cramped. You get sick, because of the cramped consitions, and the disease is fatal."
+    death:  "You quickly realize that the whole family cannot sleep in the streets. You find a tenement building to stay in for very little money, but it is very small and cramped. You get sick, because of the cramped consitions, and the disease is fatal."
 };
 
 boardinghouse = {
@@ -54,7 +54,7 @@ lithuania.yes   = america;
 lithuania.no    = freeze;
 america.yes     = hotel;
 america.no      = alleyway;
-hotel.yes       =  chicago;
+hotel.yes       = chicago;
 hotel.no        = stay;
 stay.yes        = tenement;
 stay.no         = homeless;
@@ -63,13 +63,11 @@ chicago.no      = wandering;
 stockyards.yes  = boardinghouse;
 stockyards.no   = streets;
 
-var place = lithuania;
-
 var ask = function(){
-    if( place.causeDeath === undefined ){  
+    if( place.question ){  
         return place.question;
     } else {
-        console.log( place.causeDeath );
+        console.log( place.death );
         return "Game Over.";
     }
 };
@@ -84,4 +82,5 @@ var no = function(){
     return ask();
 };
 
+var place = lithuania;
 console.log( ask() );
