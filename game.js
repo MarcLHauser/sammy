@@ -43,7 +43,7 @@ var data = {
     chicago: {
         question: "You finally arrive in Chicago and you learn a new word: 'stockyards'. Do you want to go to the stockyards?",
         no: "wandering",
-        yes: "stockyards?"
+        yes: "stockyards"
     },
     
     wandering: {
