@@ -2,8 +2,8 @@ var event = {
     
     "go to America?": {
         question: "You are Jurgis, a 27-year-old Lithuanian man who has fallen in love with Ona, a 16-year-old girl. Do you want to go to America with her and her family? Answer 'yes()' or 'no()'",
-        no: "stay in hotel?",
-        yes: "freeze"
+        yes: "stay in hotel?",
+        no: "freeze"
     },
     
     "freeze" : {
@@ -37,7 +37,6 @@ var player = {
     causeDeath: "yay",
     
     // define the player's initial life value to an event object
-    
     life: event['go to America?'],
 
 };
@@ -46,7 +45,7 @@ var ask = function(){
     
     if( player.life.causeDeath === undefined ){
         
-        console.log(player.life.question);
+        console.log( player.life.question );
         return "";
     
     } else {
@@ -61,6 +60,9 @@ var n = 0;
 
 var yes = function(){
     
+    player.life = event[ player.life.yes ];
+    return ask();
+    
     //go to stockyards?
     if (n == 4){
         player.questionNumber = questions[5];
@@ -72,16 +74,12 @@ var yes = function(){
         player.alive = false;
         player.causeDeath = "You get tuberculosis after a few days in the tenement. It is fatal.";
     }
-    
-    // re-assign the player's life value to the event object defined as the 'yes' value of the current event object 
-    
-    player.life = event[player.life.yes];
-    
-    
-    return ask();
 };
 
 var no = function(){
+    
+    player.life = event[ player.life.no ];
+    return ask();
     
     //go to America?
     if(n === 0){
